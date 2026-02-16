@@ -1,6 +1,7 @@
 # Zoe-Rear-Control-Unit
 Rear Control Unit for Tesla-Zoe. Includes AC charger functions and cooling.
 
+It uses an ESP32 S3 Mini as the MCU, and uses the onboard CAN for vehicle communication, with 4 additional CAN channels (3x AC Chargers plus CHAdeMO) added using 4x MCP25625 Combined Controller and Tranceiver. It has CHAdeMO digital IO included. It also has a Current Limited PWM Fan Driver DRC8871DDAR, and MIC4422YM Mosfet for PWM Pump Control.
 
 
 # Functions

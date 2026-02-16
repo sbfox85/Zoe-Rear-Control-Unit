@@ -108,3 +108,39 @@ The Master/Slave unit should provide a webpage that allows values to be altered,
 | IO46 | Not Used | |
 | IO47 | Out Contactors| |
 | IO48 | Heater 1 Pin | |
+
+# Control Unit Pinout
+| Pin | Name | Details | Suggested Wire Colour |
+|----|-------|---------|-----------------------|
+| A1 | Charger 1 CAN High | Twisted Pair ||
+| A2 | Vehicle CAN High | Twisted Pair ||
+| A3 | CHAdeMO CAN High | Twisted Pair ||
+| A4 | CHAdeMO CAN Low | Twisted Pair ||
+| B1 | Charger 1 CAN Low | Twisted Pair ||
+| B2 | Vehicle CAN Low | Twisted Pair ||
+| B3 | Charger 2 CAN Low| Twisted Pair ||
+| B4 | Heater 2 Switched Negative | ||
+| C1 | Charger 3 CAN Low | Twisted Pair ||
+| C2 | CHAdeMO Start 2 | ||
+| C3 | CHAdeMO Start 1 | ||
+| C4 | Charger 2 CAN High | Twisted Pair ||
+| D1 | DC-DC 1 Enable | ||
+| D2 | Charger 3 CAN High | Twisted Pair ||
+| D3 | Control Pilot 1 | PWM Signal to Charger1 ||
+| D4 | Heater 1 Switched Negative | ||
+| E1 | DC-DC 2 Enable| ||
+| E2 | CHAdeMO Out1 | ||
+| E3 | PWM Pump Out | ||
+| E4 | Control Pilot 2 | PWM Signal to Charger2  ||
+| F1 | PWM Input 1 | from pump etc. ||
+| F2 | PWM Input 2 | from pump etc. ||
+| F3 | 1-Wire | 1-Wire signal, possible for temp sensors ||
+| F4 | Control Pilot 3 | PWM Signal to Charger3 ||
+| G1 | 12v Permenant | Perm 12v, doubled with G2. Consider upsizing to reduce volt drop. ||
+| G2 | 12v Permenant | Perm 12v, doubled with G1. Consider upsizing to reduce volt drop. ||
+| G3 | Ground | Chassis Ground. 0.5mm2 ||
+| G4 | Ground | Chassis Ground 0.5mm2 ||
+| H1 | Fan 1 Out | Radiator Fan Direct Feed 1 (current limited)||
+| H2 | Fan 2 Out | Radiator Fan Direct Feed 2 (current limited)||
+| H3 | CHAdeMO Contactor | Switched Negative of Contactors for CHAdeMO ||
+| H4 | IGCT Out | Switched 12v Ignition Signal to Charger/DC-DC ||

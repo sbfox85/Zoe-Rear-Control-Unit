@@ -2,9 +2,32 @@
 //
 // Control Unit to manage Outlander Chargers in Parallel
 // With Cooling Pump and Small DC Fan Control and basic CHAdeMO.
-
+#include <ArduinoJson.h>
+#include <time.h>
+#include <WiFi.h>
+#include <ESPmDNS.h>
+#include <string.h>
+#include <stdio.h>
+#include "Wire.h"
 #include <ACAN2515.h>
 #include <ACAN_ESP32.h>
+#include <NetworkUdp.h>
+#include <WiFiUdp.h>
+#include <AsyncTCP.h>  // https://github.com/ESP32Async/AsyncTCP 3.3.8
+#include <ArduinoOTA.h>
+#include <esp_wifi.h>
+// https://github.com/ESP32Async/ESPAsyncWebServer
+#include <Arduino.h>
+#include <StreamString.h>
+#include "FS.h"
+#include <LittleFS.h>
+//#include "RTClib.h"
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+#include "driver/twai.h"
+#include "CRC8.h"
+#include "CRC.h"       //
+#include <ESPFMfGK.h>  // modified to use "FMCRC32.h" and "FMCRC32.cpp" included in the library (they conflicted with our crc)
+#include <ESPAsyncWebServer.h>
 
 static const byte MCP2515_SCK = GPIO_NUM_12 ; // SCK input of MCP2515
 static const byte MCP2515_SDI = GPIO_NUM_11 ; // SI input of MCP2515

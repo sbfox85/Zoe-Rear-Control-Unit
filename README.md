@@ -36,6 +36,9 @@ The Master/Slave unit should provide a webpage that allows values to be altered,
 |CHAD_MaxDuration| 0-300 | Maximum Minutes a CHAdeMO session can last before termination |
 |CHAD_MaxCellTempEnd | 20-50 | Maximum Cell Temp before termination |
 |CHAD_MaxCellTempBegin | 20-50 | Maximum Cell Temp allowed to start charge |
+|CHAD_BatteryHeatThreshold | 0-50 | Below this temp, request heating of battery |
+|CHAD_BatteryBlowerThreshold | 0-50 | Above this temp, request blower on battery to cool/spread heat. |
+|CHAD_BatteryCoolThreshold | 0-50 | Above this temp, request aircon on battery to cool. |
 |AC_MaxTotalkW| 1-23 | Maximum kW Allowed for AC charging. Default 23kW |
 |AC_MinTotalkW| 1-10 | Minimum kW Allowed for AC charging to continue. Default 1kW |
 |AC_MaxDeltaStart| 10-1000 | Maximum Millivolts between lowest and highest cell to allow charge to start |

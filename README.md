@@ -7,6 +7,12 @@ Rear Control Unit for Tesla-Zoe. Includes AC charger functions and cooling.
 ## Thermal Management
 This should be active all the time that the controller is awake. If the DC-DC is enabled, or the charger is outputting, we should circulate coolant at a steady rate. Fan should be operated based on temperature. Pump and Fan should run-on after shutdown of charger or dc-dc for a defined time.
 
+## AC Charger Management
+This should have a master and slave mode. Slave listens for CAN instructions, master makes the decision and broadcasts to the slave device.
+
+### 3/1 Phase AC Charging with front socket.
+The Pilot value is received from FOCCCI. It is divided by 2 in order to give the per-unit value. Ie 32amp pilot means 16amp per charging unit. The 3 Pilots on each controller (master/slave) should be set to 16amp. charging should begin.  
+
 # ESP32 Pin Assignment
 
 | ESP32 Pin | Function Description | Details |

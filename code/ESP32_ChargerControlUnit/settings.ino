@@ -178,19 +178,54 @@ void writesettings() { // Write the settings file back to the controller
 
   DynamicJsonDocument settingsw(6000);
 
-  settingsw["b_cell_imbalance_max"] = batterysettings.MaxDeltaVoltage;
-  settingsw["b_cell_temp_max"] = batterysettings.MaxCellTemp;
-  settingsw["b_cell_voltage_max"] = batterysettings.MaxCellVoltage;
-  settingsw["b_max_current"] = batterysettings.MaxCurrent;
-  settingsw["b_max_kw"] = batterysettings.MaxkW;
-  settingsw["b_max_percent"] = batterysettings.MaxSOC;
-  settingsw["b_max_voltage"] = batterysettings.MaxPackVoltage;
-  settingsw["b_min_voltage"] = batterysettings.MinPackVoltage;
-  settingsw["b_cell_voltage_min"] = batterysettings.MinCellVoltage;
-  settingsw["c_last_time_now"] = getTime();
-  settingsw["c_mode"] = controllersettings.mode;
-  settingsw["emu_p_minutes"] = timedistancevalues.TimeSinceBatteryBirth;
-
+  settingsw["CHAD_MaxkW"] = settings.CHAD_MaxkW;
+  settingsw["CHAD_MinkW"] = settings.CHAD_MinkW;
+  settingsw["CHAD_MinAmps"] = settings.CHAD_MinAmps;
+  settingsw["CHAD_MaxAmps"] = settings.CHAD_MaxAmps;
+  settingsw["CHAD_MaxPercent"] = settings.CHAD_MaxPercent;
+  settingsw["CHAD_MinPercent"] = settings.CHAD_MinPercent;
+  settingsw["CHAD_MaxVoltage"] = settings.CHAD_MaxVoltage;
+  settingsw["CHAD_MinVoltage"] = settings.CHAD_MinVoltage;
+  settingsw["CHAD_MaxDelta"] = settings.CHAD_MaxDelta;
+  settingsw["CHAD_MaxDuration"] = settings.CHAD_MaxDuration;
+  settingsw["CHAD_MaxCellTempEnd"] = settings.CHAD_MaxCellTempEnd;
+  settingsw["CHAD_MaxCellTempBegin"] = settings.CHAD_MaxCellTempBegin;
+  settingsw["CHAD_BatteryHeatThreshold""] = settings.CHAD_BatteryHeatThreshold";
+  settingsw["CHAD_BatteryBlowerThreshold"] = settings.CHAD_BatteryBlowerThreshold;
+  settingsw["CHAD_BatteryCoolThreshold"] = settings.CHAD_BatteryCoolThreshold;
+  settingsw["AC_MaxTotalkW"] = settings.AC_MaxTotalkW;
+  settingsw["AC_MinTotalkW"] = settings.AC_MinTotalkW;
+  settingsw["AC_MaxDeltaStart"] = settings.AC_MaxDeltaStart;
+  settingsw["AC_MaxDeltaEnd"] = settings.AC_MaxDeltaEnd;
+  settingsw["AC_MaxCellVoltageEnd"] = settings.AC_MaxCellVoltageEnd;
+  settingsw["AC_MaxCellVoltageStart"] = settings.AC_MaxCellVoltageStart;
+  settingsw["AC_MaxSOCStandardEnd"] = settings.AC_MaxSOCStandardEnd;
+  settingsw["AC_MaxSOCOverideEnd"] = settings.AC_MaxSOCOverideEnd;
+  settingsw["AC_MaxPackVoltageStart"] = settings.AC_MaxPackVoltageStart;
+  settingsw["AC_MaxPackVoltageEnd"] = settings.AC_MaxPackVoltageEnd;
+  settingsw["DCDC_AutoStartVoltage"] = settings.DCDC_AutoStartVoltage;
+  settingsw["DCDC_AutoStartTimout"] = settings.DCDC_AutoStartTimout;
+  settingsw["DCDC_IgnitionTimeout"] = settings.DCDC_IgnitionTimeout;
+  settingsw["DCDC_ChargeTimeout"] = settings.DCDC_ChargeTimeout;
+  settingsw["DCDC_WakeTimeout"] = settings.DCDC_WakeTimeout;
+  settingsw["DCDC_MaxVoltage"] = settings.DCDC_MaxVoltage;
+  settingsw["DCDC_MinVoltage"] = settings.DCDC_MinVoltage;
+  settingsw["DCDC_MaxTemp"] = settings.DCDC_MaxTemp;
+  settingsw["Pump_IdleSpeed"] = settings.Pump_IdleSpeed;
+  settingsw["Pump_ChargeSpeed"] = settings.Pump_ChargeSpeed;
+  settingsw["Pump_DCDCSpeed"] = settings.Pump_DCDCSpeed;
+  settingsw["Pump_MaxSpeed"] = settings.Pump_MaxSpeed;
+  settingsw["Pump_BleedSpeed"] = settings.Pump_BleedSpeed;
+  settingsw["Pump_Timeout"] = settings.Pump_Timeout;
+  settingsw["Pump_MaxThreshold"] = settings.Pump_MaxThreshold;
+  settingsw["Fan_Stage1Speed"] = settings.Fan_Stage1Speed;
+  settingsw["Fan_Stage1Temp"] = settings.Fan_Stage1Temp;
+  settingsw["Fan_Stage2Speed"] = settings.Fan_Stage2Speed;
+  settingsw["Fan_Stage2Temp"] = settings.Fan_Stage2Temp;
+  settingsw["Fan_Stage3Speed"] = settings.Fan_Stage3Speed;
+  settingsw["Fan_Stage3Temp"] = settings.Fan_Stage3Temp;
+  settingsw["Fan_Hysteresis"] = settings.Fan_Hysteresis;
+  settingsw["Fan_Timeout"] = settings.Fan_Timeout;
 
   File file = LittleFS.open("/settings.json", FILE_WRITE);
     if(!file){
@@ -228,7 +263,7 @@ Last Values to Save at poweroff, and load at power on:
 - Lowest Cell Volt
 
 */
-
+/*
 void readlastvals() {
   DynamicJsonDocument lastvals(6000); // needs calculating.
 
@@ -341,3 +376,4 @@ void writelastvals() { // Write the last values before oweroff.
   serializeJsonPretty(lastvals, file);
   file.close();
 }
+*/

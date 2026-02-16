@@ -152,6 +152,58 @@ unsigned long Charger2_Last_0x38A = 0;
 int Master = 0; // Master = 1 changes behaviour.
 int CHAdeMO = 1; // CHAdeMO = 1 Means it has chademo capability.
 
+struct SETTINGS { // All overwritten when settings.json is read, if it exists.
+int CHAD_MaxkW = 10; 
+int CHAD_MinkW = 5;
+int CHAD_MinAmps = 5; 
+int CHAD_MaxAmps = 20;
+int CHAD_MaxPercent = 90;
+int CHAD_MinPercent = 1;
+int CHAD_MaxVoltage = 380;
+int CHAD_MinVoltage = 300;
+int CHAD_MaxDelta = 100;
+int CHAD_MaxDuration = 30;
+int CHAD_MaxCellTempEnd = 400;
+int CHAD_MaxCellTempBegin = 380;
+int CHAD_BatteryHeatThreshold = 15
+int CHAD_BatteryBlowerThreshold = 0;
+int CHAD_BatteryCoolThreshold = 28; 
+int AC_MaxTotalkW = 23;
+int AC_MinTotalkW = 1;
+int AC_MaxDeltaStart = 200;
+int AC_MaxDeltaEnd = 300;
+int AC_MaxCellVoltageEnd = 4000;
+int AC_MaxCellVoltageStart = 3950;
+int AC_MaxSOCStandardEnd = 750;
+int AC_MaxSOCOverideEnd = 999;
+int AC_MaxPackVoltageStart = 380;
+int AC_MaxPackVoltageEnd = 390;
+int DCDC_AutoStartVoltage = 1200;
+int DCDC_AutoStartTimout = 5;
+int DCDC_IgnitionTimeout = 1;
+int DCDC_ChargeTimeout = 1;
+int DCDC_WakeTimeout = 1;
+int DCDC_MaxVoltage = 1500;
+int DCDC_MinVoltage = 1200;
+int DCDC_MaxTemp = 750;
+int Pump_IdleSpeed = 20;
+int Pump_ChargeSpeed = 35;
+int Pump_DCDCSpeed = 35;
+int Pump_MaxSpeed = 75;
+int Pump_BleedSpeed = 100;
+int Pump_Timeout = 10;
+int Pump_MaxThreshold = 650;
+int Fan_Stage1Speed = 10;
+int Fan_Stage1Temp = 400;
+int Fan_Stage2Speed = 30;
+int Fan_Stage2Temp = 450;
+int Fan_Stage3Speed = 60;
+int Fan_Stage3Temp = 600;
+int Fan_Hysteresis = 2;
+int Fan_Timeout = 30;
+};
+SETTINGS settings;
+
 //----------------------------------------------------------------------------------------
 //  MCP2515 Driver object
 //----------------------------------------------------------------------------------------

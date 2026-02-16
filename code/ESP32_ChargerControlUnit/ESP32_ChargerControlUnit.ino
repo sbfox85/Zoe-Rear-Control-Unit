@@ -1,3 +1,8 @@
+// https://github.com/sbfox85/Zoe-Rear-Control-Unit/
+//
+// Control Unit to manage Outlander Chargers in Parallel
+// With Cooling Pump and Small DC Fan Control and basic CHAdeMO.
+
 #include <ACAN2515.h>
 #include <ACAN_ESP32.h>
 
